@@ -1,12 +1,11 @@
 package org.studyeasy;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.studyeasy.cars.Corolla;
 import org.studyeasy.cars.Swift;
-import org.studyeasy.specs.V6;
-import org.studyeasy.specs.V8;
+import org.studyeasy.specs.EngineType;
+
 
 @Configuration
 @ComponentScan("org.studyeasy")
@@ -22,14 +21,10 @@ public class AppConfig {
 		return new Swift();
 	}
 	
-	@Bean("v6Engine")
-	public V6 v6() {
-		return new V6();
+	@Bean("engineType")
+	public EngineType engineType() {
+		return new EngineType("Ankit");
 	}
 	
-	@Bean
-	public V8 v8() {
-		return new V8();
-	}
 	
 }

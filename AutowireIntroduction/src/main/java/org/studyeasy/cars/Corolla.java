@@ -7,13 +7,8 @@ import org.studyeasy.interfaces.Engine;
 
 @Component("myCorolla")
 public class Corolla implements Car {
-/*
- *qualifier use in case of ambugity problem ; @Qualifier annotation give the name of component
- *whch we want to use 
- *error : single matching bean but found two v6 and v8;	
- */
   @Autowired
-  @Qualifier("v6Engine") 
+  @Qualifier("engineType") // we are injecting engintype object in engine class
   Engine engine;
 		
 
