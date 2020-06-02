@@ -1,13 +1,35 @@
 package org.studyeasy;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.studyeasy.cars.Corolla;
+import org.studyeasy.cars.Swift;
+import org.studyeasy.specs.V6;
+import org.studyeasy.specs.V8;
 
-@Configuration     //spring initilized itself by configuration annotation
+@Configuration
 @ComponentScan("org.studyeasy")
-
-//it will scan the org.studyeasy packages for different type of annotations and configuration;
-// and spring will boot load and spring will come and boot life;
 public class AppConfig {
-
+	// @Bean: this will bring all component in AppConfig;
+	@Bean("myCorolla")
+	public Corolla corolla() {
+	  return new Corolla();
+	}
+	
+	@Bean("swift")
+	public Swift swift() {
+		return new Swift();
+	}
+	
+	@Bean("v6Engine")
+	public V6 v6() {
+		return new V6();
+	}
+	
+	@Bean
+	public V8 v8() {
+		return new V8();
+	}
+	
 }
